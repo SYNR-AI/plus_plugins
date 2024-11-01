@@ -24,11 +24,11 @@ public class SwiftConnectivityPlusPlugin: NSObject, FlutterPlugin, FlutterStream
       binaryMessenger: registrar.messenger())
 
     let connectivityProvider: ConnectivityProvider
-    if #available(iOS 12, *) {
-      connectivityProvider = PathMonitorConnectivityProvider()
-    } else {
+//     if #available(iOS 12, *) {
+//       connectivityProvider = PathMonitorConnectivityProvider()
+//     } else {
       connectivityProvider = ReachabilityConnectivityProvider()
-    }
+//     }
 
     let instance = SwiftConnectivityPlusPlugin(connectivityProvider: connectivityProvider)
     streamChannel.setStreamHandler(instance)
